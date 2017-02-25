@@ -1,8 +1,7 @@
 class OverviewController < ApplicationController
   def index
     @users = User.all || []
-    # @comic = JSON.parse(HTTParty.get('https://xkcd.com/info.0.json').body)
-    @joke = JSON.parse(HTTParty.get('https://api.chucknorris.io/jokes/random').body)
+    @chucknorris = JSON.parse(HTTParty.get('https://api.chucknorris.io/jokes/random').body)
   end
 
   def create_user
@@ -30,6 +29,6 @@ class OverviewController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:id, :first_name, :middle_name, :last_name, :email, :role)
+    params.require(:user).permit(:id, :first_name, :middle_name, :last_name, :role)
   end
 end

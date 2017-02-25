@@ -1,6 +1,6 @@
   <div class='sub-container user-container'>
     <div class='avatar'>
-      <%= image_tag "https://robohash.org/#{@user.email}#{@user.middle_name}.png", class: 'robot' %>
+      <%= image_tag "https://robohash.org/#{@user.role}#{@user.middle_name}.png", class: 'robot' %>
     </div>
     <div class='row edit-row'>
       <%= simple_form_for @user, :url => {:action => 'save_me' } do |f| %>
@@ -8,7 +8,6 @@
         <%= f.input :first_name %>
         <%= f.input :middle_name %>
         <%= f.input :last_name %>
-        <%= f.input :email %>
         <%= f.input :role %>
         <%= f.button :submit %>
       <% end %>

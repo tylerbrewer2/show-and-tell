@@ -7,15 +7,18 @@ $(document).on('ready page:load', function() {
 function load_user() {
   var id = $(this).data('id');
   $.get('/get_user?id=' + id, function(data) {
-    $('.user-container').remove();
-    $('.center-content').append(data);
+    load_user_container(data)
   })
 }
 
 function edit_user() {
   var id = $(this).data('id');
   $.get('/edit_user?id=' + id, function(data) {
-    $('.user-container').remove();
-    $('.center-content').append(data);
+    load_user_container(data);
   })
+}
+
+function load_user_container(data) {
+  $('.user-container').remove();
+  $('.center-content').append(data);  
 }
