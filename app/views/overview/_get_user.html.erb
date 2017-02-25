@@ -1,0 +1,14 @@
+  <div class='sub-container user-container'>
+    <div class='avatar'>
+      <%= image_tag "https://robohash.org/#{@user.email}#{@user.middle_name}.png", class: 'robot' %>
+    </div>
+    <div class='row name'>
+      <p><%= @user.first_name %></p>
+      <p><%= @user.middle_name %></p>
+      <p><%= @user.last_name %></p>
+    </div>
+
+    <div class='row'>
+      <input type='button' class='btn edit' value='Edit'  data-id="<%= @user.id %>" />
+    </div>
+  </div>

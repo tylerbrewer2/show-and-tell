@@ -1,0 +1,38 @@
+<div class='center-content'>
+  <div class='sub-container'>
+    <%= simple_form_for :user, :url => {:action => 'create_user' } do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :middle_name %>
+      <%= f.input :last_name %>
+      <%= f.input :email %>
+      <%= f.input :role %>
+      <%= f.button :submit %>
+    <% end %>
+    
+  </div>
+
+  <% if @users.present? %>
+  <div class='sub-container no-padding no-background'>
+    <% @users.sort_by(&:full_name).each do |user| %>
+      <div class='row user-row' data-id="<%= user.id %>">
+        <div class='avatar'>
+          <%= image_tag "https://robohash.org/#{user.email}#{user.middle_name}.png" %>
+        </div>
+        <div class='user-details'>
+          <p><%= user.full_name %></p>
+          <p><%= user.email %></p>
+          <p><%= user.role %></p>
+        </div>
+        <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+
+      </div>
+    <% end if @users.present? %>
+  </div>
+  <% end %>
+
+  <div class='sub-container user-container'>
+    <%%= image_tag @comic['img'], class: 'comic' %>
+    <div class='row joke'><%= @joke['value'] %></div>
+  </div>
+
+</div>
