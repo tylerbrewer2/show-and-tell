@@ -10,14 +10,14 @@ class OverviewController < ApplicationController
     redirect_to root_path
   end
 
-  def get_user
+  def who_am_i
     @user = User.find_by_id(params['id'])
-    render :partial => "/overview/get_user"
-  end 
+    render json: @user
+  end
 
-  def edit_user 
+  def edit_user
     @user = User.find_by_id(params['id'])
-    render :partial => "/overview/edit_user"
+    render partial: '/overview/edit_user'
   end
 
   def save_me

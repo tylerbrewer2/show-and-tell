@@ -1,9 +1,9 @@
   <div class='sub-container user-container'>
-    <div class='avatar'>
+    <div class='row'>
       <%= image_tag "https://robohash.org/#{@user.role}#{@user.middle_name}.png", class: 'robot' %>
     </div>
     <div class='row edit-row'>
-      <%= simple_form_for @user, :url => {:action => 'save_me' } do |f| %>
+      <%= send(form_helper, @user, :url => {:action => 'save_me' }) do |f| %>
         <%= f.hidden_field :id %>
         <%= f.input :first_name %>
         <%= f.input :middle_name %>

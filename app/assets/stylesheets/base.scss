@@ -89,10 +89,15 @@ p {
 }
 
 .btn, input[type=submit] {
+  @include base-transition;
   background: $white;
   border: 2px solid #000;
   padding: 10px 15px;
   margin-top: 15px;
+
+  &:hover {
+    box-shadow: 0 0 0 5px rgba(9, 41, 64, 0.2);
+  }
 }
 
 .sub-container {
@@ -100,7 +105,6 @@ p {
   padding: 30px;
   width: 300px;
   margin: 15px;
-  max-height: 436px;
   height: 100%;
   overflow: auto;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -122,7 +126,6 @@ p {
 .user-row {
   font-family: 'Special Elite', cursive;
   border: 2px dashed $pink;
-  padding: 15px 15px 10px;
   color: #666;
   cursor: pointer;
   margin-bottom: 15px;
@@ -137,17 +140,20 @@ p {
     float: right;
     color: $pink;
     font-size: 18px;
+    padding-top: 10px;
+    padding-right: 10px;
   }
 }
 
 .user-details {
   float: left;
+  padding: 10px 10px 15px;
 }
 
 .avatar {
   float: left;
-  padding: 0 20px 0 5px;
-  margin-top: -10px;
+  padding: 5px 10px;
+  background: #ddd;
 
   img {
     width: 45px;

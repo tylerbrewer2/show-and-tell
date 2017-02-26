@@ -5,9 +5,7 @@ class Feature < ActiveRecord::Base
   strategy Flip::DatabaseStrategy
   strategy Flip::DeclarationStrategy
   default false
-  
-  feature :world_domination,
-    default: true,
-    description: "Take over the world."
 
+  feature :placeholder_over_label,
+          description: 'When this toggle is turned on, there will no longer be labels.'
 end

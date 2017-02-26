@@ -26,8 +26,7 @@ ActiveRecord::Schema.define(version: 20170223173214) do
     t.string   "first_name",  null: false
     t.string   "middle_name", null: false
     t.string   "last_name",   null: false
-    t.string   "email"
-    t.string   "role"
+    t.string   "role",        null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
