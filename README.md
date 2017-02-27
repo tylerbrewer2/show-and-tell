@@ -24,6 +24,7 @@ Using the [Flip](https://github.com/pda/flip) gem.
 	It was determined it would be a better user experience that after a user updates a profile, they should see how it is changed in the card instead of refreshing the page.
 	
 	- Highlight user selection for the visible card
+	- Create a hover state for the user list
 	- After the user saves, show the updated changes on the user card
 
 4.  **ROUTES**
