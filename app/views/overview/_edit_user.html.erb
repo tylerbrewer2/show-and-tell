@@ -3,7 +3,7 @@
       <%= image_tag "https://robohash.org/#{@user.role}#{@user.middle_name}.png", class: 'robot' %>
     </div>
     <div class='row edit-row'>
-      <%= send(form_helper, @user, :url => {:action => 'save_me' }) do |f| %>
+      <%= flip_form_helper(@user, :url => {:action => 'save_me' }) do |f| %>
         <%= f.hidden_field :id %>
         <%= f.input :first_name %>
         <%= f.input :middle_name %>

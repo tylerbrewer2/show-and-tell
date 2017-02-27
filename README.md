@@ -42,9 +42,7 @@ Using the [Flip](https://github.com/pda/flip) gem.
 	- We want to add the image URL to the JSON
 	- Our existing code will also use this API
 
-6. **API** 
-
-	We want to test out if users prefer XKCD opposed to Chuck Norris.
+	We also want to test out if users prefer XKCD opposed to Chuck Norris.
 	
 	- Switch the joke module from the [Chuck Norris API](https://api.chucknorris.io/jokes/random) to [XKCD Comic API](https://xkcd.com/info.0.json).
 

@@ -1,6 +1,6 @@
 <div class='center-content'>
   <div class='sub-container'>
-    <%= send(form_helper, :user, :url => {:action => 'create_user' }) do |f| %>
+    <%= flip_form_helper(:user, :url => {:action => 'create_user' }) do |f| %>
       <%= f.input :first_name %>
       <%= f.input :middle_name %>
       <%= f.input :last_name %>
