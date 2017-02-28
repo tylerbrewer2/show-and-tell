@@ -4,7 +4,11 @@
       <%= f.input :first_name %>
       <%= f.input :middle_name %>
       <%= f.input :last_name %>
-      <%= f.input :role %>
+      <% if Flip.on?(:specific_user_role) %>
+        <%= f.input :user_role, collection: @roles %>
+      <% else %>
+        <%= f.input :role %>
+      <% end %>
       <%= f.button :submit %>
     <% end %>
   </div>
@@ -14,7 +18,7 @@
       <% @users.sort_by(&:full_name).each do |user| %>
         <div class='row user-row' data-id="<%= user.id %>">
           <div class='avatar'>
-            <%= image_tag "https://robohash.org/#{user.role}#{user.middle_name}.png" %>
+            <%= image_tag "https://robohash.org/#{user_role(user)}#{user.middle_name}.png" %>
           </div>
           <div class='user-details'>
             <p><%= user.full_name %></p>

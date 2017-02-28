@@ -20,19 +20,19 @@ function edit_user() {
 
 function load_user_container(data) {
   $('.user-container').remove();
-  $('.center-content').append(data);    
+  $('.center-content').append(data);
 }
 
 function create_user_html(data) {
   return "<div class='sub-container user-container'>" +
          "   <div class='row'>" +
-         "     <img src='https://robohash.org/" + data.role + data.middle_name + ".png' class='robot' />" +
+         "     <img src='https://robohash.org/" + (data.role || data.user_role.name) + data.middle_name + ".png' class='robot' />" +
          "   </div>" +
          "   <div class='row name'>" +
          "     <p>" + data.first_name + "</p>" +
          "     <p>" + data.middle_name + "</p>" +
          "     <p>" + data.last_name + "</p>" +
-         "     <p>the " + data.role + "</p>" +
+         "     <p>the " + (data.role || data.user_role.name) + "</p>" +
          "   </div>" +
          "   <div class='row'>" +
          "     <input type='button' class='btn edit' value='Edit' data-id='" + data.id + "' />" +
